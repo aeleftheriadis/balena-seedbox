@@ -1,0 +1,27 @@
+version: '2'
+services:
+  transmission:
+    image: haugene/transmission-openvpn:latest-armhf
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - "/dev/net/tun"
+    restart: always
+    ports:
+      - "9091:9091"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    volumes:
+      - data:/data
+  proxy:
+    image: haugene/transmission-openvpn-proxy:latest-armhf
+    links:
+      - transmission
+    ports:
+      - "80:8080"
+    depends_on:
+      - transmission
+volumes:
+  data:
