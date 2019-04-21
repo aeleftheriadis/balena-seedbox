@@ -1,6 +1,6 @@
-# balena-transmission-openvpn
+# balena-seedbox
 
-Deploy [haugene/docker-transmission-openvpn](https://github.com/haugene/docker-transmission-openvpn) project on Balena devices.
+Deploy [haugene/docker-transmission-openvpn](https://github.com/haugene/docker-transmission-openvpn) and [Emby](https://emby.media/) on Raspberry Pi 3 using Balena.
 
 ## Usage
 
@@ -12,5 +12,3 @@ balena push {balena_project}
 ### Configure
 
 Go to your Balena dashboard, Service Variables and add your custom configuration variables.
-
-Transmission Web UI will be available after enabling `PUBLIC DEVICE URL` on your Balena Device dashboard.

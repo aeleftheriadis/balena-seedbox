@@ -23,5 +23,13 @@ services:
       - "80:8080"
     depends_on:
       - transmission
+  emby:
+    image: emby/embyserver_arm32v7
+    ports:
+      - "8096:8096"
+    volumes:
+      - data:/data
+      - emby:/config
 volumes:
   data:
+  emby:
